@@ -5,7 +5,7 @@
        <DxFileUploader
         accept="audio/*" 
         uploadMode="instantly"
-        upload-url="https://whispering-river-75272.herokuapp.com//file"
+        upload-url="https://whispering-river-75272.herokuapp.com/file"
         :on-uploaded="onFilesUploaded">   
     </DxFileUploader>
     <AudioItem :url="url" :times="beats" @duration-time="getTime"></AudioItem>
@@ -92,7 +92,7 @@ import {
         }
       },
       onFilesUploaded(e) {
-        
+          console.log(e.request.response);
           this.file = e.file;
           console.log(this.file.name);
           this.format =  this.file.name.split('.').pop();
