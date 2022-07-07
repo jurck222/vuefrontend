@@ -90,6 +90,7 @@ import {
             beats: this.beats 
           }
           this.songs=[...this.songs,song];
+          console.log(this.songs);
         }
         else{
           console.log("already in there");
@@ -107,15 +108,30 @@ import {
           for(var i =0; i< this.beats.length;i++){
             this.beats[i]=(Math.round( this.beats[i] * 10) / 10);
           }
+          console.log(this.beats);
           var metadata =response[1].replace("\"]\n","").replace("\"","").split(":");
           console.log(metadata)
           this.artist=metadata[0];
+          console.log(this.artist);
           this.album=metadata[1];
+          console.log(this.album);
           this.title=metadata[2];
+          console.log(this.title);
           this.genre=metadata[3];
+          console.log(this.genre);
          
       },
-		}
+		},
+    created() {
+      console.log('test');
+      
+      this.songs=[
+        {id: 1, filename: '01. Only One Will Die.mp3', title: 'Only One Will Die', artist: 'Cannibal Corpse', album: 'Red Before Black', duration: "3:24", format: "mp3", genre: "Metal", bpm:190, beats:"0, 0.3,  0.6,  1,  1.3,  1.6,  1.9,  2.2,  2.6, 2.9,  3.2,  3.5,  3.8,  4.1,  4.4,  4.8,  5.1,  5.4,  5.7,  6,  6.3,  6.7,  7,  7.3,  7.6,  8,  8.3,  8.6,  9,  9.3,  9.7,  10,  10.3,  10.6,  10.9"},
+        {id: 2, filename: '01 The End..mp3', title: 'The End.', artist: 'My Chemical Romance', album: 'The Black Parade', duration:"1:52", format:"mp3", genre:"Alternative", bpm:175, beats:"0.2, 0.5, 0.8, 1.2, 1.5, 1.8, 2.2, 2.5, 2.9, 3.2, 3.5, 3.9, 4.3, 4.6, 4.9, 5.3, 5.6, 6, 6.3, 6.7, 7,"},
+        {id: 3, filename: 'Orbit Culture - The Shadowing (Official Music Video).mp3', title: 'The Shadowing', artist: 'Orbit Culture', album: 'Not specified', duration:"4:26", format:"mp3",genre: "Not specified", bpm: 139,beats:"0.4, 0.8, 1.3, 1.7, 2.1, 2.6, 3, 3.4, 3.9, 4.3, 4.7, 5.2, 5.6, 6, 6.4, 6.9, 7.3, 7.7, 8.2, 8.6, 9"}
+      ]
+    }
+
     
 	}
 </script>
