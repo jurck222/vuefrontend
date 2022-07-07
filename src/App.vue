@@ -6,6 +6,7 @@
         accept="audio/*" 
         uploadMode="instantly"
         upload-url="https://whispering-river-75272.herokuapp.com/file"
+        :upload-headers="headers"
         :on-uploaded="onFilesUploaded">   
     </DxFileUploader>
     <AudioItem :url="url" :times="beats" @duration-time="getTime"></AudioItem>
@@ -37,7 +38,10 @@ import {
         album:'',
         duration:'',
         format:'',
-        bpm:''
+        bpm:'',
+        headers:{
+          'Access-Control-Allow-Origin': '*'
+        }
         
 			}
 		},
